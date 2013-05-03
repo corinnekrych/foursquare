@@ -1,0 +1,17 @@
+<table class="table table-bordered table-condensed table-striped table-hover">
+    <thead>
+    <tr>
+        <th>firstname</th>
+        <th>lastname</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="friend in friends" ng-click="edit(project.$id())">
+        <td><a href="#/friends/{{friend.id}}">{{friend.firstname}}</a></td>
+        <td>{{friend.lastname}}</td>
+    </tr>
+    </tbody>
+</table>
+<div class="well">
+    <button class="btn" ng-click="new()">New Friend</button>
+</div>
