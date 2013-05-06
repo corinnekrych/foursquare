@@ -10,10 +10,8 @@ angular.module('foursquareApp', ['resources.friends'])
     $routeProvider.when('/friends/:friendId', {
                                     templateUrl: 'js/src/app/friend/friends-edit.tpl.html',
                                     controller: 'FriendEditCtrl',
-                                    resolve: {friend: ['friends', '$routeParams', '$route', function (friends, $routeParams, $route) {
-                                                                                                console.log("routeParams"+$routeParams.id);
-                                                                                                console.log("route"+$route.current.params.itemId);
-                                                                                                return friends[$routeParams.id];} ]} }
+                                    resolve: {friend: ['friends', '$route', function (friends, $route) {
+                                                                                                return friends[$route.current.params.friendId];} ]} }
     )
     .otherwise({redirectTo: '/friends'});
 }])
